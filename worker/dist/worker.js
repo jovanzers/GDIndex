@@ -1,5 +1,5 @@
 self.props = {
-	title: 'GDIndex',
+	title: 'WinTen Drive',
 	default_root_id: 'root',
 	client_id: '202264815644.apps.googleusercontent.com',
 	client_secret: 'X4Z3ca8xfWDb1Voo-F9a7ZxJ',
@@ -442,7 +442,7 @@ self.props = {
   }
 
   const gd = new GoogleDrive(self.props);
-  const HTML = `<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>${self.props.title}</title><link href="/~_~_gdindex/resources/css/app.css" rel=stylesheet></head><body><script>window.props = { title: '${self.props.title}', default_root_id: '${self.props.default_root_id}', api: location.protocol + '//' + location.host, upload: ${self.props.upload} }<\/script><div id=app></div><script src="/~_~_gdindex/resources/js/app.js"><\/script></body></html>`;
+  const HTML = `<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><title>${self.props.title}</title><link href="/~_~_gdindex/resources/css/app.css" rel=stylesheet><link rel="icon" href="https://winten.tk/wp-content/uploads/2018/03/cropped-photo_2017-10-30_21-30-18-32x32.jpg" sizes="32x32"></head><body><script>window.props = { title: '${self.props.title}', default_root_id: '${self.props.default_root_id}', api: location.protocol + '//' + location.host, upload: ${self.props.upload} }<\/script><div id=app></div><script src="/~_~_gdindex/resources/js/app.js"><\/script></body></html>`;
 
   async function onGet(request) {
     let {
@@ -452,7 +452,7 @@ self.props = {
 
     if (path.startsWith('/~_~_gdindex/resources/')) {
       const remain = path.replace('/~_~_gdindex/resources/', '');
-      const r = await fetch(`https://raw.githubusercontent.com/maple3142/GDIndex/master/web/dist/${remain}`);
+      const r = await fetch(`https://raw.githubusercontent.com/jovanzers/GDIndex/master/web/dist/${remain}`);
       return new Response(r.body, {
         headers: {
           'Content-Type': mime.getType(remain) + '; charset=utf-8',
